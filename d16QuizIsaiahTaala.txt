@@ -1,0 +1,29 @@
+1) Which Software Development Life Cycle does testing early rather than before deployment?
+- Waterfall
+- Unit
+- Iterative
+- (Correct) Agile
+
+2) What is a disadvantage of the Big Bang Model?
+- Difficult learning curve
+- Each phase requires the previous to be done
+- (Correct) High risk if requirements were misunderstood
+- Complex planning phase
+
+3) What is a disadvantage of the Waterfall Model?
+- Difficult learning curve
+- (Correct) Each phase requires the previous to be done
+- High risk if requirements were misunderstood
+- Complex planning phase
+
+4) Which SDLC model involves the most customer feedback?
+- (Correct) Agile
+- Waterfall
+- Spiral
+- Response
+
+5) Which is not an Agile methodology?
+- Scrum
+- (Correct) Sprint
+- Kanban
+- Feature Driven Development
