@@ -1,0 +1,30 @@
+1) What does convention-based routing do?
+- Enables you to specify routing information by decorating your controllers and actions with attributes that define your application's routes
+- (CORRECT) Enables you to globally define the URL formats that your application accepts and how each of those formats maps to a specific action method on given controller
+- Places route definitions to the controller and action with which they're associated
+- None of the above
+
+2) Dependency injection can be done through:
+- (CORRECT) The use of an interface or base class to abstract the dependency implementation
+- Registration of the dependency in a controller
+- Injection of the service into the constructor of Main
+- None of the above
+
+3) <h1 class="example" id="example">Example</h1>
+According to the html tag above, which of the CSS selectors below will have the highest specificity?
+- h1 
+- .example
+- (CORRECT) #example
+- h1.example
+
+4) Which of the following is strongly typed data passed to the View: 
+- ViewData
+- ViewBag
+- ViewLogic
+- (CORRECT) ViewModel
+
+5) Which HTML tag is used for hypertext links?
+- <link>
+- <href>
+- (CORRECT) <a>
+- <src>
