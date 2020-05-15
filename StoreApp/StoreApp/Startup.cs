@@ -8,8 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using StoreApp.Data;
 using Microsoft.EntityFrameworkCore;
+using StoreApp.Data;
+using StoreApp.BusinessLogic;
 
 namespace StoreApp
 {
@@ -27,9 +28,10 @@ namespace StoreApp
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<StoreAppContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("StoreAppContext")));
-        
+            services.AddDbContext<StoreAppDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("StoreAppDbContext")));
+
+            services.AddScoped<IRepository, Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
