@@ -1,0 +1,29 @@
+1) Which of the following benefits can also be a disadvantage of Cloud Computing?
+- Scales delivery to the amount of resources required
+- Has multiple backups for data recovery
+- Many IT tasks are handled automatically (Correct, can be less flexible/customizable)
+- Saves money from not having to have datacenters on-site
+
+2) Which of the following is an example of Horizontal Scaling?
+- Upgrading server RAM
+- Downgrading server CPU processors
+- Removing Servers (Correct, scaling in: removing instances to a service)
+- Putting computers side by side
+
+3) Which of the following Cloud Computing Services allows the most customization?
+- IaaS (Correct, most of the stack is self managed which allows more customization)
+- PaaS
+- SaaS
+- TaaS
+
+4) Which of the following Cloud Computing Services would be best for a small business and small IT team?
+- IaaS
+- PaaS
+- SaaS
+- TaaS
+
+5) Which is not a Cloud Computing Service?
+- Amazon Web Services
+- Microsoft Azure
+- Google Cloud
+- Dropbox (Correct, its only a cloud storage)
