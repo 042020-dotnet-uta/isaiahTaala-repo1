@@ -19,7 +19,7 @@
 4) Which of the following Cloud Computing Services would be best for a small business and small IT team?
 - IaaS
 - PaaS
-- SaaS
+- SaaS (Correct, offers the most features to compensate for smaller staff)
 - TaaS
 
 5) Which is not a Cloud Computing Service?
