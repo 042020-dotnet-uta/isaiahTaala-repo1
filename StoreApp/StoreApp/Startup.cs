@@ -31,7 +31,7 @@ namespace StoreApp
             services.AddDbContext<StoreAppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("StoreAppDbContext")));
 
-            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IRepository<BusinessLogic.Product>, ProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

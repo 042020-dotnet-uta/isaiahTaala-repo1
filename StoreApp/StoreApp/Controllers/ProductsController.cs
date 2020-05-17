@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-//using StoreApp.Data;
+using StoreApp.Data;
 using StoreApp.BusinessLogic;
 
 namespace StoreApp.WebApp.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly IRepository _repository;
+        private readonly IRepository<BusinessLogic.Product> _repository;
 
-        public ProductsController(IRepository repository)
+        public ProductsController(IRepository<BusinessLogic.Product> repository)
         {
             _repository = repository;
         }
@@ -22,18 +22,15 @@ namespace StoreApp.WebApp.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _repository.GetProductsAsync());
+            return View(await _repository.GetAllAsync());
+            //return View();
         }
 
         // GET: Products/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            var product = await _repository.GetAsync(id);
 
-            var product = await _repository.GetProductAsync(id);
             if (product == null)
             {
                 return NotFound();
