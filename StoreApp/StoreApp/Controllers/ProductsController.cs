@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Data;
 using StoreApp.BusinessLogic;
+using StoreApp.WebApp.Models;
 
 namespace StoreApp.WebApp.Controllers
 {
@@ -23,7 +24,6 @@ namespace StoreApp.WebApp.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _repository.GetAllAsync());
-            //return View();
         }
 
         // GET: Products/Details/5
@@ -35,8 +35,32 @@ namespace StoreApp.WebApp.Controllers
             {
                 return NotFound();
             }
+            // add locations to select from for drop down list on view
 
-            return View(product);
-        }              
+
+            var poViewModel = new ProductOrderViewModel
+            {
+                ProductID = product.ProductID,
+                Name = product.Name,
+                Price = product.Price
+            };
+            return View(poViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        // POST: Products/Details/5
+        public async Task<IActionResult> Details(ProductOrderViewModel poViewModel)
+        {
+            
+            //var product = await _repository.GetAsync(id);
+
+            //if (product == null)
+            //{
+            //    return NotFound();
+            //}
+
+            return View(poViewModel);
+        }
     }
 }

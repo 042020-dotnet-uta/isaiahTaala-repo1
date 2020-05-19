@@ -56,5 +56,10 @@ namespace StoreApp.Data
                 Price = product.Price
             };
         }
+
+        public Task<BusinessLogic.Product> GetAsync(BusinessLogic.Product entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -13,10 +13,10 @@ namespace StoreApp.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if(!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EF");
-            }
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EF");
+            //}
         }
 
         public DbSet<Admin> Admins { get; set; }

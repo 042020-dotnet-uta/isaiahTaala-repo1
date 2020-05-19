@@ -1,14 +1,24 @@
-﻿@model Store.WebApp.Models.LoginViewModel
+﻿@model Store.WebApp.Models.RegisterViewModel
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Register";
 }
-<h1>Login</h1>
+<h1>Register</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Index">
             @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
@@ -27,7 +37,7 @@
 </div>
 
 <div>
-    <a asp-controller="Register" asp-action="Index">Register</a>
+    <a asp-controller="Login" asp-action="Index">Login</a>
 </div>
 
 @section Scripts {

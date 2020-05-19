@@ -11,24 +11,26 @@ using Store.WebApp.Models;
 
 namespace StoreApp.WebApp.Controllers
 {
-    public class LoginController : Controller
+    public class RegisterController : Controller
     {
         private readonly IRepository<BusinessLogic.User> _repository;
 
-        public LoginController(IRepository<BusinessLogic.User> repository)
+        public RegisterController(IRepository<BusinessLogic.User> repository)
         {
             _repository = repository;
         }
 
         public IActionResult Index()
         {
-            var viewModel = new LoginViewModel();
+            HttpContext.Session.SetString("Email", string.Empty );
+
+            var viewModel = new RegisterViewModel();
             return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index(LoginViewModel user)
+        public async Task<ActionResult> Index(RegisterViewModel user)
         {
             try
             {
@@ -39,10 +41,12 @@ namespace StoreApp.WebApp.Controllers
                 var businessUser = new BusinessLogic.User
                 {
                     Email = user.Email,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
                     Password = user.Password
                 };
 
-                var dbuser = await _repository.GetAsync(businessUser);
+                await _repository.AddAsync(businessUser);
 
                 HttpContext.Session.SetString("Email", businessUser.Email);
 
@@ -53,5 +57,7 @@ namespace StoreApp.WebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
         }
+
+
     }
 }

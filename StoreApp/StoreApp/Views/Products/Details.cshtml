@@ -1,4 +1,4 @@
-﻿@model StoreApp.BusinessLogic.Product
+﻿@model StoreApp.WebApp.Models.ProductOrderViewModel;
 
 @{
     ViewData["Title"] = "Details";
@@ -24,7 +24,49 @@
         </dd>
     </dl>
 </div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details">
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    foreach(StoreApp.WebApp.Models.ProductOrderViewModel )
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Exemplo1",
+                        Value = "Exemplo1"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Exemplo2",
+                        Value = "Exemplo2",
+                        Selected = true
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Exemplo3",
+                        Value = "Exemplo3"
+                    });
+                }
+
+                @Html.DropDownListFor(model => model.LocationID, listItems, "-- Select Status --")
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProductID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

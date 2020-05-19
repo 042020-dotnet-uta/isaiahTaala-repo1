@@ -20,6 +20,7 @@ namespace StoreApp.BusinessLogic
         Task AddAsync(TEntity entity);
         Task DeleteAsync(int id);
         Task<TEntity> GetAsync(int id);
+        Task<TEntity> GetAsync(TEntity entity);
         Task<IEnumerable<TEntity>> GetAllAsync();
         //Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
     }

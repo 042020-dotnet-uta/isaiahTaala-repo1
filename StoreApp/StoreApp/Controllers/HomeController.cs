@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using StoreApp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace StoreApp.Controllers
 {
@@ -20,6 +21,10 @@ namespace StoreApp.Controllers
 
         public IActionResult Index()
         {
+            var email = HttpContext.Session.GetString("Email");
+            if (email == null)
+                Response.Redirect("Register");
+            
             return View();
         }
 

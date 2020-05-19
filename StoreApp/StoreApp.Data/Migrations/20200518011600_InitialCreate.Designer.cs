@@ -10,7 +10,7 @@ using StoreApp.Data;
 namespace StoreApp.Data.Migrations
 {
     [DbContext(typeof(StoreAppDbContext))]
-    [Migration("20200513164808_InitialCreate")]
+    [Migration("20200518011600_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -168,6 +168,9 @@ namespace StoreApp.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserID");
